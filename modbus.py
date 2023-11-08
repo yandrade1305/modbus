@@ -29,7 +29,7 @@ class Modbus:
 					, command
 					, len(message)
 					, *[ord(char) for char in message]
-					# , *self.enrollment_id
+					, *self.enrollment_id
 				]
 			else:
 				byte_array = [
@@ -37,7 +37,7 @@ class Modbus:
 					, func_code
 					, command
 					, *list(struct.pack("i" if isinstance(message, int) else "f", message))
-					# , *self.enrollment_id
+					 , *self.enrollment_id
 				]
 		crc = get_crc16(byte_array)
 		byte_array = byte_array + list(struct.pack('H', crc))
