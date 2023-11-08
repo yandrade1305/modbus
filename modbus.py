@@ -5,7 +5,7 @@ import constants as C
 
 class Modbus:
 	def __init__(self):
-		self.__identifier = '0601'
+		self.__identifier = '5363'
 		self.request = [0xA1, 0xA2, 0xA3]
 		self.send	= [0xB1, 0xB2, 0xB3]
 
